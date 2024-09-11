@@ -10,7 +10,7 @@ let predefinedAnswers = {
         answers: ["Walaikum Assalam! How can I help you today?", 
                   "Assalamualaikum! Need any assistance?", 
                   "Walaikum Assalam! What can I do for you?"],
-        variations: ["salam", "walaikum assalam", "assalamualaikum"]
+        variations: ["salam", "walaikum assalam", "assalamualaikum", "assalamu aalaikum"]
     },
     "well-being": {
         answers: ["I'm doing well, thank you! How about you?", 
@@ -134,7 +134,7 @@ function createTypingIndicator() {
     let typingDiv = document.createElement("div");
     typingDiv.classList.add("answer", "bot");
     typingDiv.innerHTML = `<div class="logo">
-                              <img src="Images/Profile.img/Profile_pic-1.jpg" alt="Bot">
+                              <img src="Profile_pic-1.jpg" alt="Bot">
                            </div>
                            <span class="text">
                              <div class="typing-indicator"></div>
@@ -156,7 +156,7 @@ function createAnswerElement(answer) {
     let answerDiv = document.createElement("div");
     answerDiv.innerHTML = `<div class="answer bot">
                               <div class="logo">
-                                <img src="Images/Profile.img/Profile_pic-1.jpg" alt="Bot">
+                                <img src="Profile_pic-1.jpg" alt="Bot">
                               </div>
                               <span class="text">${answer}</span>
                            </div>`;
