@@ -1,0 +1,225 @@
+/* Basics */
+:root{
+    --primary-color: #343541;
+    --secondary-color: #444654;
+    --text-color: #fff;
+    --bot-color: #839683;
+}
+
+#light{
+    --primary-color: #ffffff;
+    --secondary-color: #e2e2e2;
+    --text-color: #000;
+}
+
+*{
+    font-family: sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hero-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.verified-badge {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    vertical-align: middle; /* Align badge vertically with text */
+    transform: translateY(1px); /* Move badge slightly down */
+}
+
+/* Verified badge bounce animation */
+.verified-badge:active {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1) translateY(2px); /* Maintain position after bounce */
+    }
+    50% {
+        transform: scale(1.2) translateY(2px); /* Bounce effect */
+    }
+}
+
+/* Send button hover and click effects */
+#submit {
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+#submit i {
+    color: rgb(255, 255, 255); /* Change this to the desired icon color */
+}
+
+#submit:hover i {
+    color: rgb(255, 255, 255); /* Change icon color on hover */
+}
+
+#submit:hover {
+    background-color: #878787;
+    border: 2px solid rgb(103, 103, 103);
+}
+
+#submit:active {
+    transform: scale(0.9);
+}
+
+/* Container and form styles */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qus-ans {
+    padding-bottom: 200px;
+    overflow: auto;
+    width: 100%;
+}
+
+.question, .answer {
+    min-height: 50px;
+    max-width: 70vw;
+    position: relative;
+    padding: 20px;
+    margin: 10px auto;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 20px;
+    flex-direction: row; /* Ensures proper alignment of image and text */
+}
+
+/* Bot's answer aligned to the left */
+.answer {
+    background-color: var(--secondary-color);
+    border-radius: 20px 20px 20px 0px; /* Rounded borders for bot messages */
+    justify-content: flex-start; /* Aligns bot messages to the left */
+    margin-right: auto; /* Bot messages stick to the left */
+}
+
+/* User's question aligned to the right */
+.question {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 20px 20px 0px 20px; /* Rounded borders for user messages */
+    justify-content: flex-end; /* Aligns user messages to the right */
+    margin-left: auto; /* User messages stick to the right */
+}
+
+/* Profile images adjustments */
+.logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px; /* Adds spacing between profile picture and text */
+    border-radius: 50%; /* Rounded profile image */
+    position: relative;
+    flex-shrink: 0; /* Prevents image shrinking */
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Input box adjustments */
+.ask-form {
+    position: fixed;
+    bottom: 50px;
+    width: 50vw;
+    height: 40px;
+    z-index: 99;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding-left: 10px; /* Add some left padding for input */
+    display: flex; /* Use Flexbox */
+    align-items: center;
+    justify-content: space-between; /* Space between input and button */
+}
+
+#ask-here {
+    background-color: var(--secondary-color);
+    border: none;
+    height: 90%;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 0 10px; /* Padding inside input */
+    flex-grow: 1; /* Input takes up the remaining space */
+}
+
+#submit {
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; /* Space between input and button */
+    transition: background-color 0.3s, transform 0.2s;
+}
+.typing-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    animation: typing 1s infinite;
+}
+
+.typing-indicator:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-indicator:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .question, .answer {
+        width: 80vw;
+    }
+
+    .ask-form {
+        width: 80vw;
+    }
+}
